@@ -20,6 +20,13 @@ public class MaxHeapExample {
         if (right < heapSize && arr[right].frequency > arr[largest].frequency) {
             largest = right;
         }
+
+        if (largest != i) {
+            WordFreq tmp = arr[i];
+            arr[i] = arr[largest];
+            arr[largest] = tmp;
+            maxHeapify(arr, heapSize, largest);
+        }
     }
 
     // Standard BUILD-MAX-HEAP (bottom-up)
