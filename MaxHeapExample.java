@@ -6,6 +6,11 @@ class WordFreq {
         this.word = word;
         this.frequency = frequency;
     }
+
+    @Override
+    public String toString() {
+        return word + " (" + frequency + ")";
+    }
 }
 
 public class MaxHeapExample {
@@ -37,6 +42,12 @@ public class MaxHeapExample {
         }
     }
 
+    static void printArray(WordFreq[] arr) {
+        for (WordFreq wf : arr) {
+            System.out.println(wf);
+        }
+    }
+
     public static void main(String[] args) {
         WordFreq[] data = {
             new WordFreq("happy", 400),
@@ -52,5 +63,8 @@ public class MaxHeapExample {
         };
 
         buildMaxHeap(data);
+
+        System.out.println("Heapified array (max-heap order):");
+        printArray(data);
     }
 }
